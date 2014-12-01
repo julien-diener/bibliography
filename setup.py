@@ -1,10 +1,13 @@
 from setuptools import setup
 
-setup(name='YourAppName',
-      version='1.0',
-      description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
-      url='http://www.python.org/sigs/distutils-sig/',
-#      install_requires=['Django>=1.3'],
+# required packages
+packages = ['Django<=1.6',]
+
+setup(name='publication',
+      version='0.1',
+      description='...',
+      author='Julien Diener',
+      author_email='julien.diener@gmail.com',
+      url='publication-juliendiener.rhcloud.com',
+      install_requires=packages,
      )
