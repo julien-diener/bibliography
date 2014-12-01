@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="wrapper of google scholar user publication" />
+
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{% publication/css/stylesheet.css %}">
+
+    <title>{{ user }}</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/...">View on GitHub</a>
+          
+          <a href="http://publication-juliendiener.rhcloud.com/">
+          <h1 id="project_title">Google scholar wrapper</h1>
+          </a>
+          <h3 id="project_tagline">Online scholar CV</h3>
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <h3> user:{{ user }} </h3>
+      
+      <section id="main_content" class="inner">
+    {{ content }}
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Running with the <a href="https://www.djangoproject.com/">Django framework</a> on <a href="https://www.openshift.com/">OpenShift</a></p>
+        
+        <p><a href="/admin">admin page</a></p>
+      </footer>
+    </div>
+    
+  </body>
+</html>
