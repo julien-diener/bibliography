@@ -1,7 +1,7 @@
 from setuptools import setup
 
 # required packages
-packages = ['Django<=1.6',]
+packages = ['Django<=1.6', 'bs4>=4.2.1']
 
 setup(name='publication',
       version='0.1',
