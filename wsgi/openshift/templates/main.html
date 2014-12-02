@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/pygment_trac.css" %}">
     
-    <title>{{ user }}</title>
+    <title>{{ title }}</title>
   </head>
 
   <body>
@@ -31,11 +31,11 @@
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <h3> user:{{ user }} </h3>
       
-      <section id="main_content" class="inner">
-    {{ content }}
-      </section>
+      {% for pub in publication %}
+        <li> <a href="{{ pub.href }}"> {{ pub.title }} </a> </li>
+      {% endfor %}
+      
     </div>
 
     <!-- FOOTER  -->
