@@ -7,8 +7,10 @@ import re
 
 try:
     from bs4 import SoupStrainer, BeautifulSoup
+    BS_VERSION = 4
 except ImportError:
     from BeautifulSoup import SoupStrainer, BeautifulSoup
+    BS_VERSION = 3
 
 
 class MyOpener(FancyURLopener):
@@ -29,7 +31,10 @@ class Query(object):
 
         self.title = re.findall(Query.title_filter,self.html)[0]
         
-        pubTree   = BeautifulSoup(self.html, parse_only=SoupStrainer(*Query.pub_filter))
+        if BS_VERSION==4:
+            pubTree = BeautifulSoup(self.html, parse_only=SoupStrainer(*Query.pub_filter))
+        else:
+            pubTree = BeautifulSoup(self.html, parseOnlyThese=SoupStrainer(*Query.pub_filter))
         
         publication = []
         for pub in pubTree.findAll(*Query.pub_filter):
