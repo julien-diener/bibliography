@@ -18,8 +18,9 @@ class MyOpener(FancyURLopener):
 
 
 class Query(object):
-    title_filter = '<title>(.*)</title>'
-    pub_filter = ['tr',{'class':'gsc_a_tr'}]
+    sorry_filter= '<title>.*Sorry.*</title>'
+    name_filter = '<title>(.*)-.*</title>'
+    pub_filter  = ['tr',{'class':'gsc_a_tr'}]
     
     def __init__(self, user_id):
         self.user_id = user_id
@@ -27,9 +28,18 @@ class Query(object):
         ##possible todo: &cstart=0&pagesize=20
 
         self.html = MyOpener().open(self.url).read()
+        
+        refused = len(re.findall(Query.sorry_filter,self.html))>00
+        
+        if refused:
+            self.error = True;
+        else:
+            self.error = False;
+            self.parse();
+        
 
-
-        self.title = re.findall(Query.title_filter,self.html)[0]
+    def parse(self):
+        self.username = re.findall(Query.name_filter,self.html)[0]
         
         if BS_VERSION==4:
             pubTree = BeautifulSoup(self.html, parse_only=SoupStrainer(*Query.pub_filter))

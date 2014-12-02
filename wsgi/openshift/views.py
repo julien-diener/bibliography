@@ -1,4 +1,3 @@
-from django.shortcuts import render_to_response
 from django.template import Context, loader
 from django.http import HttpResponse
 
@@ -13,7 +12,11 @@ def publication(request):
     
     
     query = gcitation.Query(var['user'])
-    var['title'] = query.title
+    
+    if query.error:
+        return HttpResponse(query.html)
+    
+    var['username'] = query.username
     var['publication'] = query.publication
     #var['content'] = "not implemented\n\n" + repr(query)
     
@@ -22,5 +25,4 @@ def publication(request):
     c = Context(var)
     
     return HttpResponse(t.render(c))
-    
-    return render_to_response(request, 'main.html', var)
+

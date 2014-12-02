@@ -7,44 +7,34 @@
     <meta name="description" content="wrapper of google scholar user publication" />
 
     {% load static from staticfiles %}
-    {% static "css/stylesheet.css" as stylesheet %}
+    {% static "css/publication.css" as stylesheet %}
     <link rel="stylesheet" type="text/css" media="screen" href="{{ stylesheet }}">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/pygment_trac.css" %}">
-    
-    <title>{{ title }}</title>
+    <title>{{ username }} publication </title>
   </head>
 
   <body>
 
     <!-- HEADER -->
-    <div id="header" class="outer">
-        <header class="inner">
-          <a href="http://publication-juliendiener.rhcloud.com/">
-          <h1 id="project_title">Google scholar wrapper</h1>
-          </a>
-          <h3 id="project_tagline">Online scholar CV</h3>
-          
-          <right><a href="https://github.com/...">View on GitHub</a></right>
-        </header>
+    <div id="header">
+        <a href="http://publication-juliendiener.rhcloud.com/">
+        <h3>Publication of {{ username }}</h3>
     </div>
 
     <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
+    <div id="main">
       
       {% for pub in publication %}
-        <li> <a href="{{ pub.href }}"> {{ pub.title }} </a> </li>
+        <p> <a href="{{ pub.href }}"> {{ pub.title }} </a> </p>
       {% endfor %}
       
     </div>
 
     <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Running with the <a href="https://www.djangoproject.com/">Django framework</a> on <a href="https://www.openshift.com/">OpenShift</a></p>
+    <div id="footer">
+        <p>A <a href="https://www.djangoproject.com/">Django</a> project running on <a href="https://www.openshift.com/">OpenShift</a></p>
         
         <p><a href="/admin">admin page</a></p>
-      </footer>
     </div>
     
   </body>

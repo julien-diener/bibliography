@@ -1,0 +1,40 @@
+body {
+    height: 100%;
+    margin-bottom: 30px;
+    background-color: gray;
+    color: white;
+    padding:0px;
+    height: 100%;
+}
+a:link{
+    color: white;
+    text-decoration: none;
+}
+a:visited{
+    color: blue;
+    text-decoration: none;
+}
+
+#header {
+    height: 60px;
+    text-align: center;
+}
+#footer {
+    height: 60px;
+    bottom: 0;
+    width:800px;
+    margin: auto;
+    text-align: right;
+}
+#main{
+    width:800px;
+    margin: auto;
+    padding:25px;
+    background-color: black;
+    border-radius: 10px;    
+}
+#main a:visited{
+    color: lightgray;
+    text-decoration: none;
+}
+
