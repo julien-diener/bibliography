@@ -1,7 +1,6 @@
-Bibliography project
-====================
+###Bibliography project
 
-This project was an attempt of a [Django](https://www.djangoproject.com/) server that *nicely* wrap the citations of google scholar (registered) user, for deployement on the [OpenShift](https://www.openshift.com/) host. 
+This project was an attempt of a [Django](https://www.djangoproject.com/) server that *nicely* wrap the citations of google scholar (registered) user, for deployement on [OpenShift](https://www.openshift.com/) host. 
 
 The project is not finished but it is working... until google block the request :-(
 
