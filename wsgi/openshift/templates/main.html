@@ -6,24 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <meta name="description" content="wrapper of google scholar user publication" />
 
-    {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" media="screen" href="{% publication/css/stylesheet.css %}">
+    {% load static from staticfiles %}
+    {% static "css/stylesheet.css" as stylesheet %}
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ stylesheet }}">
 
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/pygment_trac.css" %}">
+    
     <title>{{ user }}</title>
   </head>
 
   <body>
 
     <!-- HEADER -->
-    <div id="header_wrap" class="outer">
+    <div id="header" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/...">View on GitHub</a>
-          
           <a href="http://publication-juliendiener.rhcloud.com/">
           <h1 id="project_title">Google scholar wrapper</h1>
           </a>
           <h3 id="project_tagline">Online scholar CV</h3>
           
+          <right><a href="https://github.com/...">View on GitHub</a></right>
         </header>
     </div>
 
