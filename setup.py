@@ -1,7 +1,7 @@
 from setuptools import setup
 
 # required packages
-packages = ['Django<=1.6', 'beautifulsoup>=4.2.1']
+packages = ['Django<=1.6', 'beautifulsoup']
 
 setup(name='publication',
       version='0.1',
