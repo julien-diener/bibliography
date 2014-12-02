@@ -3,8 +3,12 @@ Read google scholar (registered) user citation
 """
 
 from urllib import FancyURLopener
-from bs4 import SoupStrainer, BeautifulSoup
 import re
+
+try:
+    from bs4 import SoupStrainer, BeautifulSoup
+except ImportError:
+    from BeautifulSoup import SoupStrainer, BeautifulSoup
 
 
 class MyOpener(FancyURLopener):
