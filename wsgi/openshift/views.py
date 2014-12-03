@@ -1,10 +1,11 @@
+from django.shortcut import redirect
 from django.template import Context, loader
 from django.http import HttpResponse
 
 import gcitation
 
 def home(request):
-     return render_to_response('home/home.html')
+    redirect('publication')
      
 def publication(request):
     var = {}
