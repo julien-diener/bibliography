@@ -7,6 +7,9 @@ The project is not finished but it is working... until google block the request 
 So, until google free up automated request, this project is dead.
 
 
-Here is the current output of the page 'user/':
+Below is the current output of the page 'user/'. I still did not work on: 
+
+ - item appearance: it only display the publication title
+ - user selection: it display my publication list by default 
 
 ![Screenshot](screenshot.png)
